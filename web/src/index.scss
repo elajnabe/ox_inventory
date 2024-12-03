@@ -2,15 +2,15 @@ $mainColor: #22232c;
 $textColor: #c1c2c5;
 $mainFont: Roboto;
 
-$secondaryColor: rgba(12, 12, 12, 0.4);
-$secondaryColorHighlight: #33343F;
+$secondaryColor: rgba(12, 12, 12, 0.305);
+$secondaryColorHighlight: #33343f;
 $secondaryColorLight: rgba(0, 0, 0, 0.5);
 $secondaryColorDark: rgba(12, 12, 12, 0.8);
 
 $gridCols: 5;
 $gridRows: 5;
-$gridSize: 10.2vh;
-$gridGap: 2px;
+$gridSize: 12.2vh;
+$gridGap: 4px;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
 
 body {
@@ -58,25 +58,24 @@ input[type='number']::-webkit-outer-spin-button {
 
 .context-menu-list {
   min-width: 200px;
-  background-color: $mainColor;
+  background-color: rgb(42 42 42 / 70%);
   color: $textColor;
   padding: 4px;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-style: inset;
-  border-width: 1px;
   border-radius: 4px;
-  outline: none;
   display: flex;
   flex-direction: column;
+  outline: none;
 }
 
-.context-menu-item  {
+.context-menu-item {
   padding: 8px;
   border-radius: 4px;
   background-color: transparent;
   outline: none;
   border: none;
-  color: $textColor;
+  color: rgb(249, 249, 249);
+  font-weight: 600;
+  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,7 +83,7 @@ input[type='number']::-webkit-outer-spin-button {
     transform: none;
   }
   &:hover {
-    background-color: $secondaryColorHighlight;
+    background-color: rgb(42 42 42 / 40%);
     cursor: pointer;
   }
 }
@@ -122,11 +121,11 @@ button:active {
   align-items: center;
   height: 100%;
 
-  gap: 20px;
+  gap: 100px;
 }
 
 .inventory-control {
-  display: flex;
+  display: none;
 
   .inventory-control-wrapper {
     display: flex;
@@ -255,7 +254,6 @@ button:active {
 
 // Dialog is used fro useful controls window
 
-
 // inventory grids
 .inventory-grid-wrapper {
   display: flex;
@@ -266,8 +264,13 @@ button:active {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
   p {
     font-size: 16px;
+    font-weight: 600;
+    background-color: rgba(12, 12, 12, 0.305);
+    padding: 5px;
+    border-radius: 4px;
   }
 }
 
@@ -288,14 +291,14 @@ button:active {
   border-radius: 2.5%;
   image-rendering: -webkit-optimize-contrast;
   position: relative;
-  background-size: 7vh;
+  background-size: 6vh;
   color: $textColor;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-style: inset;
-  border-width: 1px;
+  border-color: rgba(33, 33, 33, 0.741);
+  border-width: 2px;
 }
 
 .inventory-slot-label-box {
+  display: none;
   background-color: $mainColor;
   color: $textColor;
   text-align: center;
@@ -318,13 +321,12 @@ button:active {
 }
 
 .inventory-slot-number {
-  background-color: white;
-  color: black;
+  // background-color: white;
+  color: white;
   height: 12px;
-  border-top-left-radius: 0.25vh;
-  border-bottom-right-radius: 0.25vh;
   padding: 3px;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 500;
   font-family: $mainFont;
 }
 
@@ -350,7 +352,7 @@ button:active {
 }
 
 .item-slot-info-wrapper {
-  display: flex;
+  display: none;
   flex-direction: row;
   align-self: flex-end;
   padding: 3px;
@@ -379,28 +381,34 @@ button:active {
   padding-right: 3px;
   p {
     font-size: 14px;
-    text-shadow: 0.1vh 0.1vh 0 rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    background-color: rgba(18, 64, 6, 0.34);
+    width: fit-content;
+    padding: 3px 6px;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    margin-right: 2px;
   }
 }
-
 
 .tooltip-wrapper {
   pointer-events: none;
   display: flex;
-  background-color: $mainColor;
+  background-color: rgb(42 42 42 / 70%);
   width: 200px;
   padding: 8px;
   flex-direction: column;
   min-width: 200px;
-  color: $textColor;
+  color: white;
   font-family: $mainFont;
   border-radius: 4px;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: inset;
   border-width: 1px;
   p {
+    color: rgba(241, 241, 241, 0.863);
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
   }
 }
 
@@ -410,8 +418,9 @@ button:active {
   justify-content: space-between;
   align-items: center;
   p {
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }
 
@@ -511,10 +520,11 @@ button:active {
 
 .weight-bar {
   background: rgba(0, 0, 0, 0.4);
-  border: 1px inset rgba(0, 0, 0, 0.1);
-  height: 0.8vh;
-  border-radius: 5%;
+  height: 1.4vh;
+  border-radius: 4px;
   overflow: hidden;
+  margin-top: 1vh;
+  width: 100%;
 }
 
 .transition-fade-enter {
@@ -536,7 +546,7 @@ button:active {
 }
 
 .transition-slide-up-enter {
-  transform: translateY(200px)
+  transform: translateY(200px);
 }
 
 .transition-slide-up-enter-active {

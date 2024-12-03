@@ -26,7 +26,7 @@ debugData([
         items: [
           {
             slot: 1,
-            name: 'iron',
+            name: 'lockpick',
             weight: 3000,
             metadata: {
               description: `name: Svetozar Miletic  \n Gender: Male`,
@@ -37,8 +37,8 @@ debugData([
             },
             count: 5,
           },
-          { slot: 2, name: 'powersaw', weight: 0, count: 1, metadata: { durability: 75 } },
-          { slot: 3, name: 'copper', weight: 100, count: 12, metadata: { type: 'Special' } },
+          { slot: 2, name: 'ammo-9', weight: 0, count: 1, metadata: { durability: 75 } },
+          { slot: 3, name: 'card_bank', weight: 100, count: 12, metadata: { type: 'Special' } },
           {
             slot: 4,
             name: 'water',
@@ -61,7 +61,7 @@ debugData([
       },
       rightInventory: {
         id: 'shop',
-        type: 'crafting',
+        type: 'shop',
         slots: 5000,
         label: 'Bob Smith',
         weight: 3000,
